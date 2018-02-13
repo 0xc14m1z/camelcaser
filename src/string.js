@@ -1,1 +1,1 @@
-export default string = s => s
+export const string = s => s
