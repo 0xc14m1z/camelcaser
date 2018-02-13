@@ -1,0 +1,19 @@
+{
+  "name": "camelcaser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciamiz/camelcaser.git"
+  },
+  "author": "0xc14m1z <0xc14m1z@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ciamiz/camelcaser/issues"
+  },
+  "homepage": "https://github.com/ciamiz/camelcaser#readme"
+}
