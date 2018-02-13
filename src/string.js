@@ -1,0 +1,1 @@
+export default const string = s => s
