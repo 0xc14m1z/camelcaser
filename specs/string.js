@@ -4,43 +4,28 @@ import { string } from "../src/string"
 
 describe("string", () => {
 
-  it("should convert a string to camelCase", () => {
+  const matches = {
+    "Programming Puzzles & Code Golf": "programmingPuzzlesCodeGolf",
+    "XML HTTP request": "xmlHttpRequest",
+    "supports IPv6 on iOS?": "supportsIpv6OnIos",
+    "SomeThing w1th, apo'strophe's and' punc]tuation": "someThingW1thApostrophesAndPuncTuation",
+    "nothing special": "nothingSpecial",
+    "5pecial ca5e": "5pecialCa5e",
+    "1337": "1337",
+    "1337-spEAk": "1337Speak",
+    "whatA mess": "whataMess",
+    "abcD": "abcd",
+    "a": "a",
+    "B": "b"
+  }
 
-    expect(string("Programming Puzzles & Code Golf"))
-      .to.equal("programmingPuzzlesCodeGolf")
-  
-    expect(string("XML HTTP request"))
-      .to.equal("xmlHttpRequest")
-  
-    expect(string("supports IPv6 on iOS?"))
-      .to.equal("supportsIpv6OnIos")
-  
-    expect(string("SomeThing w1th, apo'strophe's and' punc]tuation"))
-      .to.equal("someThingW1thApostrophesAndPuncTuation")
-  
-    expect(string("nothing special"))
-      .to.equal("nothingSpecial")
-  
-    expect(string("5pecial ca5e"))
-      .to.equal("5pecialCa5e")
-  
-    expect(string("1337"))
-      .to.equal("1337")
-  
-    expect(string("1337-spEAk"))
-      .to.equal("1337Speak")
-  
-    expect(string("whatA mess"))
-      .to.equal("whataMess")
-  
-    expect(string("abcD"))
-      .to.equal("abcd")
-  
-    expect(string("a"))
-      .to.equal("a")
-  
-    expect(string("B"))
-      .to.equal("b")
+  Object.keys(matches).forEach(test => {
+
+    const expected = matches[test]
+
+    it(`should convert '${test}' to '${expected}'`, () => {
+      expect(string(test)).to.equal(expected)
+    })
 
   })
 
