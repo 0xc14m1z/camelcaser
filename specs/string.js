@@ -155,5 +155,31 @@ describe("private helper methods", () => {
 
   })
 
+  describe("flattenSplits", () => {
+    
+    const testedMethod = string.__get__("flattenSplits")
+
+    describe("should flatten a two-dimensions array of splat words", () => {
+
+      it(`should keep an empty array the same`, () => {
+        const test = []
+        expect(testedMethod(test)).to.be.deep.equal(test)
+      })
+
+      it(`should keep an already-flat array the same`, () => {
+        const test = ["First", "word", "of", "sentence"]
+        expect(testedMethod(test)).to.be.deep.equal(test)
+      })
+
+      it(`should flatten a two-dimensions array`, () => {
+        const test = ["First", ["word", "of", "sentence"]]
+        const expected = ["First", "word", "of", "sentence"]
+        expect(testedMethod(test)).to.be.deep.equal(expected)
+      })
+
+    })
+
+  })
+
 
 })
