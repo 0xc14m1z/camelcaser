@@ -9,7 +9,7 @@
     "prebuild": "npm run clean && npm run init",
     "build": "npx babel src --out-dir dist",
     "pretest": "npm run build",
-    "test": "mocha --require babel-core/register specs/**/*.js",
+    "test": "NODE_ENV=test mocha --require babel-core/register specs/**/*.js",
     "start": "npm test -- -w"
   },
   "repository": {
