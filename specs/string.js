@@ -107,7 +107,7 @@ describe("private helper methods", () => {
 
         const expected = tests[test]
     
-        it(`should convert '${test}' to '${expected.toString()}'`, () => {
+        it(`should convert '${test}' to '${JSON.stringify(expected)}'`, () => {
           expect(testedMethod(test)).to.be.deep.equal(expected)
         })
     
@@ -115,5 +115,45 @@ describe("private helper methods", () => {
     })
 
   })
+
+  describe("splitBeforeCapitalLetter", () => {
+    
+    const testedMethod = string.__get__("splitBeforeCapitalLetter")
+
+    describe("should split a string before a capital letter, when it is surrounded by lowercase letters", () => {
+
+      const tests = {
+        "Programming Puzzles  Code Golf": ["Programming", "Puzzles", "", "Code", "Golf"],
+        "XML HTTP request": ["XML", "HTTP", "request"],
+        "supports IPv6 on iOS": ["supports", "IPv6", "on", "iOS"],
+        "SomeThing w1th apostrophes and punctuation": ["Some", "Thing", "w1th", "apostrophes", "and", "punctuation"],
+        "nothing special": ["nothing", "special"],
+        "5pecial ca5e": ["5pecial", "ca5e"],
+        "1337": ["1337"],
+        "1337-spEAk": ["1337-spEAk"],
+        "whatA mess": ["whatA", "mess"],
+        "abcD": ["abcD"],
+        "a": ["a"],
+        "B": ["B"],
+        "snake_case": ["snake_case"],
+        "long_snake_case": ["long_snake_case"],
+        "dash-case": ["dash-case"],
+        "long-dash-case": ["long-dash-case"],
+        "SomeThing w1th": ["Some", "Thing", "w1th"]
+      }
+
+      Object.keys(tests).forEach(test => {
+
+        const expected = tests[test]
+    
+        it(`should convert '${test}' to '${JSON.stringify(expected)}'`, () => {
+          expect(testedMethod(test)).to.be.deep.equal(expected)
+        })
+    
+      })
+    })
+
+  })
+
 
 })
