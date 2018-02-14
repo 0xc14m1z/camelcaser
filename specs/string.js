@@ -40,7 +40,7 @@ describe("private helper methods", () => {
 
   describe("removeSymbols", () => {
     
-    const removeSymbols = string.__get__("removeSymbols")
+    const testedMethod = string.__get__("removeSymbols")
 
     describe("should strip symbols that aren't alphanumerical nor digits or spaces", () => {
 
@@ -69,7 +69,46 @@ describe("private helper methods", () => {
         const expected = tests[test]
     
         it(`should convert '${test}' to '${expected}'`, () => {
-          expect(removeSymbols(test)).to.equal(expected)
+          expect(testedMethod(test)).to.equal(expected)
+        })
+    
+      })
+    })
+
+  })
+
+  describe("splitByNonAlphanumeric", () => {
+    
+    const testedMethod = string.__get__("splitByNonAlphanumeric")
+
+    describe("should split a string by non alphanumerical characters", () => {
+
+      const tests = {
+        "Programming Puzzles  Code Golf": ["Programming", "Puzzles", "", "Code", "Golf"],
+        "XML HTTP request": ["XML", "HTTP" , "request"],
+        "supports IPv6 on iOS": ["supports", "IPv6", "on", "iOS"],
+        "SomeThing w1th apostrophes and punctuation": ["SomeThing", "w1th", "apostrophes", "and", "punctuation"],
+        "nothing special": ["nothing", "special"],
+        "5pecial ca5e": ["5pecial", "ca5e"],
+        "1337": ["1337"],
+        "1337-spEAk": ["1337", "spEAk"],
+        "whatA mess": ["whatA", "mess"],
+        "abcD": ["abcD"],
+        "a": ["a"],
+        "B": ["B"],
+        "snake_case": ["snake", "case"],
+        "long_snake_case": ["long", "snake", "case"],
+        "dash-case": ["dash", "case"],
+        "long-dash-case": ["long", "dash", "case"],
+        "SomeThing w1th": ["SomeThing", "w1th"]
+      }
+
+      Object.keys(tests).forEach(test => {
+
+        const expected = tests[test]
+    
+        it(`should convert '${test}' to '${expected.toString()}'`, () => {
+          expect(testedMethod(test)).to.be.deep.equal(expected)
         })
     
       })
