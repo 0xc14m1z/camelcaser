@@ -181,5 +181,26 @@ describe("private helper methods", () => {
 
   })
 
+  describe("lowercase", () => {
+    
+    const testedMethod = string.__get__("lowercase")
+
+    describe("should lowercase every word in an array", () => {
+
+      it(`should keep an empty array the same`, () => {
+        const test = []
+        expect(testedMethod(test)).to.be.deep.equal(test)
+      })
+
+      it(`should lowercase every item of the array`, () => {
+        const test = ["First", "woRd", "oF", "sEnteNcE"]
+        const expected = ["first", "word", "of", "sentence"]
+        expect(testedMethod(test)).to.be.deep.equal(expected)
+      })
+
+    })
+
+  })
+
 
 })
