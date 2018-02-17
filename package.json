@@ -13,6 +13,12 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "npm test -- -w"
   },
+  "nyc": {
+    "exclude": [
+      "specs",
+      "dist"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ciamiz/camelcaser.git"
