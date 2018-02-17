@@ -9,7 +9,8 @@
     "prebuild": "npm run clean && npm run init",
     "build": "npx babel src --out-dir dist",
     "pretest": "npm run build",
-    "test": "NODE_ENV=test mocha --require babel-core/register specs/**/*.js",
+    "test": "NODE_ENV=test nyc mocha --require babel-core/register specs/**/*.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "npm test -- -w"
   },
   "repository": {
@@ -30,9 +31,7 @@
     "coveralls": "^3.0.0",
     "mocha": "^5.0.0",
     "npx": "^9.7.1",
-    "nyc": "^11.4.1"
-  },
-  "dependencies": {
+    "nyc": "^11.4.1",
     "babel-plugin-rewire": "^1.1.0"
   }
 }
