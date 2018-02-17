@@ -117,3 +117,24 @@ describe("objectKeys", () => {
   })
 
 })
+
+describe("private helper methods", () => {
+
+  describe("objecyKey", () => {
+
+    const objectKey = objectKeys.__get__("objectKey")
+
+    it('should camelCase and add the given key to an object', () => {
+      const initialTestObject = { first_key: 42 }
+      const temporaryTestObject = { "second-key": 43, "third-key": 44 }
+      const testKey = "first_key"
+
+      const result = objectKey(initialTestObject)(temporaryTestObject, testKey)
+      const expected = { firstKey: 42, "second-key": 43, "third-key": 44 }
+
+      expect(result).to.be.deep.equal(expected)
+    })
+
+  })
+
+})
