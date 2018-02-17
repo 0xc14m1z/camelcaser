@@ -4,7 +4,7 @@ const objectKeys = obj =>
   isObject(obj) ?
   Object.keys(obj).reduce(objectKey(obj), {}) :
     Array.isArray(obj) ?
-    objectsArrayKeys(obj) :
+    obj.map(element => objectKeys(element)) :
     obj
 
 export default objectKeys
@@ -15,10 +15,7 @@ const objectKey = initialObject => (obj, key) =>
     { [ CamelCaser.string(key) ]: objectKeys(initialObject[key]) }
   )
 
-const objectsArrayKeys = arr =>
-  arr.map(element => objectKeys(element))
-
 const isObject = obj =>
-  obj !== null &&
+  obj &&
   typeof obj === "object" &&
   Object.getPrototypeOf(obj) === Object.prototype
