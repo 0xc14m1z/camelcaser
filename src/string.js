@@ -1,10 +1,10 @@
-const string = s => 
+const string = str =>
   uncapitalizeWord(
     join(
       capitalize(
         lowercase(
           split(
-            removeSymbols(s)
+            removeSymbols(str)
           )
         )
       )
@@ -13,22 +13,22 @@ const string = s =>
 
 export default string
 
-const removeSymbols = s =>
-  s.replace(/[^a-zA-Z\d\s\_\-]/g, "")
+const removeSymbols = str =>
+  str.replace(/[^a-zA-Z\d\s\_\-]/g, "")
 
-const split = s =>
+const split = str =>
   flattenSplits(
-    splitByNonAlphanumeric(s).map(splitBeforeCapitalLetter)
+    splitByNonAlphanumeric(str).map(splitBeforeCapitalLetter)
   )
 
 const flattenSplits = arrayOfArray =>
   Array.prototype.concat(...arrayOfArray)
 
-const splitByNonAlphanumeric = s =>
-  s.split(/[^a-zA-Z\d]/g)
+const splitByNonAlphanumeric = str =>
+  str.split(/[^a-zA-Z\d]/g)
 
-const splitBeforeCapitalLetter = s =>
-  s.replace(/([a-z])([A-Z][a-z])/g, "$1 $2").split(" ")
+const splitBeforeCapitalLetter = str =>
+  str.replace(/([a-z])([A-Z][a-z])/g, "$1 $2").split(" ")
 
 const lowercase = arrayOfWords =>
   arrayOfWords.map(s => s.toLowerCase())
@@ -36,11 +36,11 @@ const lowercase = arrayOfWords =>
 const capitalize = arrayOfWords =>
   arrayOfWords.map(capitalizeWord)
 
-const capitalizeWord = s =>
-  s.replace(/\b./, firstChar => firstChar.toUpperCase())
+const capitalizeWord = str =>
+  str.replace(/\b./, firstChar => firstChar.toUpperCase())
 
-const uncapitalizeWord = s =>
-  s.replace(/\b./, firstChar => firstChar.toLowerCase())
+const uncapitalizeWord = str =>
+  str.replace(/\b./, firstChar => firstChar.toLowerCase())
 
 const join = arrayOfWords =>
   arrayOfWords.join("")
