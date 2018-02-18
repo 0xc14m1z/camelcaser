@@ -148,7 +148,7 @@ describe("private helper methods", () => {
 
     it('should return true for new empty objects', () => {
       const test = isObject(new Object())
-      expect(test).to.be.false
+      expect(test).to.be.true
     })
 
     it('should return false for arrays', () => {
