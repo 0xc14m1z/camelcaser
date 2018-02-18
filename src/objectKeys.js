@@ -17,5 +17,4 @@ const objectKey = initialObject => (obj, key) =>
 
 const isObject = obj =>
   !!obj &&
-  typeof obj === "object" &&
   Object.getPrototypeOf(obj) === Object.prototype
