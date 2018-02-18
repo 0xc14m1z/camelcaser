@@ -1,4 +1,4 @@
-# lamelcaser
+# kamelcaser
 
 [![Build Status](https://travis-ci.org/0xc14m1z/kamelcaser.svg?branch=master)](https://travis-ci.org/0xc14m1z/kamelcaser) [![Maintainability](https://api.codeclimate.com/v1/badges/b5dc2376d6251d38ca6a/maintainability)](https://codeclimate.com/github/0xc14m1z/kamelcaser/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/0xc14m1z/kamelcaser/badge.svg?branch=master)](https://coveralls.io/github/0xc14m1z/kamelcaser?branch=master)
