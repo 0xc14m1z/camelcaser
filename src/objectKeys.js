@@ -1,4 +1,4 @@
-import CamelCaser from '..'
+import KamelCaser from '..'
 
 const objectKeys = obj =>
   isObject(obj) ?
@@ -12,7 +12,7 @@ export default objectKeys
 const objectKey = initialObject => (obj, key) =>
   Object.assign(
     obj,
-    { [ CamelCaser.string(key) ]: objectKeys(initialObject[key]) }
+    { [ KamelCaser.string(key) ]: objectKeys(initialObject[key]) }
   )
 
 const isObject = obj =>

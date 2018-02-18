@@ -1,5 +1,5 @@
 {
-  "name": "camelcaser",
+  "name": "kamelcaser",
   "version": "1.0.0",
   "description": "Convert strings and object keys to camelCase format.",
   "main": "./dist/index.js",
@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ciamiz/camelcaser.git"
+    "url": "git+https://github.com/0xc14m1z/kamelcaser.git"
   },
   "author": "0xc14m1z <0xc14m1z@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ciamiz/camelcaser/issues"
+    "url": "https://github.com/0xc14m1z/kamelcaser/issues"
   },
-  "homepage": "https://github.com/ciamiz/camelcaser#readme",
+  "homepage": "https://github.com/0xc14m1z/kamelcaser#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
