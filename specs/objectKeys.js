@@ -143,44 +143,47 @@ describe("private helper methods", () => {
 
     it('should return true for POJOs', () => {
       const test = isObject({})
-      const expected = true
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.true
     })
 
     it('should return true for new empty objects', () => {
       const test = isObject(new Object())
-      const expected = true
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.false
     })
 
     it('should return false for arrays', () => {
       const test = isObject(new Array())
-      const expected = false
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.false
     })
 
     it('should return false for functions', () => {
       const test = isObject(() => {})
-      const expected = false
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.false
     })
 
     it('should return false for literal integers', () => {
       const test = isObject(42)
-      const expected = false
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.false
     })
 
     it('should return false for Number objects', () => {
       const test = isObject(new Number(42))
-      const expected = false
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.false
     })
 
     it('should return false for literal strings', () => {
       const test = isObject('42')
-      const expected = false
-      expect(test).to.be.equal(expected)
+      expect(test).to.be.false
+    })
+
+    it('should return false for null', () => {
+      const test = isObject(null)
+      expect(test).to.be.false
+    })
+
+    it('should return false for undefined', () => {
+      const test = isObject(undefined)
+      expect(test).to.be.false
     })
 
   })
