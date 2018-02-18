@@ -25,14 +25,14 @@ KamelCaser.string("snake_string")
 KamelCaser.string("PascalString")
 // pascalString
 
-KamelCaser.objectKeys({ first_key: 42, SecondKey: 43, "third-key": 44 })
+KamelCaser.keys({ first_key: 42, SecondKey: 43, "third-key": 44 })
 // { firstKey: 42, secondKey: 43, thirdKey: 44 }
 
 // object with deep keys
-KamelCaser.objectKeys({ first_key: 42, SecondKey: 43, "third-key": 44, fourthKey: { "fifth_key": 45 } })
+KamelCaser.keys({ first_key: 42, SecondKey: 43, "third-key": 44, fourthKey: { "fifth_key": 45 } })
 // { firstKey: 42, secondKey: 43, thirdKey: 44, fourthKey: { fifthKey: 45 } }
 
 // array of objects
-KamelCaser.objectKeys([{ first_key: 42 }, { SecondKey: 43 }, { "third-key": 44 }])
+KamelCaser.keys([{ first_key: 42 }, { SecondKey: 43 }, { "third-key": 44 }])
 // [{ firstKey: 42 }, { secondKey: 43 }, { thirdKey: 44 }]
 ```

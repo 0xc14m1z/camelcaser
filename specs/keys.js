@@ -1,28 +1,28 @@
 import { expect } from "chai"
 
-import objectKeys from "../src/objectKeys"
+import keys from "../src/keys"
 
-describe("objectKeys", () => {
+describe("keys", () => {
 
   it('should keep an empty object the same', () => {
     const test = {}
     const expected = {}
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
   it('should keep a literal value the same', () => {
     const test = 42
     const expected = 42
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
   it('should keep an empty array the same', () => {
     const test = []
     const expected = []
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
   it('should camelCase keys in a flat object', () => {
@@ -38,7 +38,7 @@ describe("objectKeys", () => {
       thirdKey: 34
     }
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
   it('should camelCase keys in an object with nested objects', () => {
@@ -68,7 +68,7 @@ describe("objectKeys", () => {
       }
     }
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
   it('should camelCase keys in an object inside an array', () => {
@@ -106,30 +106,30 @@ describe("objectKeys", () => {
       }
     }
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
   it('should camelCase the keys of objects contained into an array', () => {
     const test = [ { nested_key: 42 } ]
     const expected = [ { nestedKey: 42 } ]
 
-    expect(objectKeys(test)).to.be.deep.equal(expected)
+    expect(keys(test)).to.be.deep.equal(expected)
   })
 
 })
 
 describe("private helper methods", () => {
 
-  describe("objecyKey", () => {
+  describe("key", () => {
 
-    const objectKey = objectKeys.__get__("objectKey")
+    const key = keys.__get__("key")
 
     it('should camelCase and add the given key to an object', () => {
       const initialTestObject = { first_key: 42 }
       const temporaryTestObject = { "second-key": 43, "third-key": 44 }
       const testKey = "first_key"
 
-      const result = objectKey(initialTestObject)(temporaryTestObject, testKey)
+      const result = key(initialTestObject)(temporaryTestObject, testKey)
       const expected = { firstKey: 42, "second-key": 43, "third-key": 44 }
 
       expect(result).to.be.deep.equal(expected)
@@ -139,7 +139,7 @@ describe("private helper methods", () => {
 
   describe("isObject", () => {
 
-    const isObject = objectKeys.__get__("isObject")
+    const isObject = keys.__get__("isObject")
 
     it('should return true for POJOs', () => {
       const test = isObject({})

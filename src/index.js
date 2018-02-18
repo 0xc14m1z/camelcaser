@@ -1,7 +1,7 @@
 import string from './string'
-import objectKeys from './objectKeys'
+import keys from './keys'
 
 export default {
   string,
-  objectKeys
+  keys
 }
