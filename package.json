@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Convert strings and object keys to camelCase format.",
   "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "init": "mkdir dist",
     "clean": "rm -rf dist",
