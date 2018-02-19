@@ -7,13 +7,14 @@ Convert strings and object keys to camelCase format.
 ## how to install
 
 ```
-npm install --save kamelcaser
+$ npm install --save kamelcaser
 ```
 
 ## how to use it
 
 ```js
-import KamelCaser from 'kamelcaser'
+import KamelCaser from "kamelcaser"
+// or var KamelCaser = require("kamelcaser")
 
 
 KamelCaser.string("dashed-string")
