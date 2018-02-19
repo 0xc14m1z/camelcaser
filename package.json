@@ -1,6 +1,6 @@
 {
   "name": "kamelcaser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert strings and object keys to camelCase format.",
   "main": "./dist/index.js",
   "files": [
